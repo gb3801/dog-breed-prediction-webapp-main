@@ -1,0 +1,73 @@
+<html>
+
+<head> -->
+    <link rel="stylesheet" href={{ url_for('static', filename='style.css' )}}>
+</head>
+<style>
+    .loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -56px 0 0 -56px;
+}
+
+.loader:after {
+  content: " ";
+  display: block;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 1px solid;
+  border-color: #0aa13a transparent #47a90e transparent;
+  animation: ring 1.2s linear infinite;
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+    </style>
+<body>
+
+    <title>Dog breed prediction</title>
+    <h1 style="color:green; font: bolder; font-family:Comic Sans MS; justify-content: start; flex: auto; display: flex; padding-left: 5px;">ROVER-AI</h1><br>
+    <h2 style="color:aliceblue;">Dog breed prediction</h2><br><br>
+    
+    <form action="/prediction" method="post" enctype="multipart/form-data">
+        <p style="color:aliceblue;text-align:left">Upload an image of a dog in format either '.jpg' or '.jpeg'</p>
+        <li>
+            <input style="color:aliceblue" type="file" accept="image" name="dog_image">
+        </li>
+        <div class="flex-container">
+            <button style="margin: 5px;"><a href="/" style="text-decoration: none;">Reset</a></button>
+            
+            <button style="margin: 5px;" type="submit">Submit</button><br>
+        </div>
+    </form>
+    {% if loading %}
+    <div class="loader"></div>
+    {% endif %}
+    {% if prediction %}
+        <br><p style="color:aliceblue;text-align:center">Its called <b> {{ prediction }}</b>.</p>
+        <img src="{{ dog_image }}">
+    {% endif %}
+
+    <p style="color:aliceblue;">Made by A<sup>2</sup>DG</p>
+
+</body>
+<script>
+    document.addEventListener('load',()=>{
+        let loading = true
+    })
+    // function Loaded() {
+    //     window.onload = ()=>{
+    //         return true
+    //     }
+    //     // return document.readyState !== "complete";
+    // }
+</script>
+</html>
