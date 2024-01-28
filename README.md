@@ -22,3 +22,11 @@ Tensorflow / Tensorflow-CPU
     *`python app.py`* 
 
 - Open the URL in a browser.
+
+### Image Output
+### 1. Interface
+![Screenshot (1)](https://github.com/gb3801/dog-breed-prediction-webapp-main/assets/98964593/47f0c93b-4aa5-499f-b20b-e2e7313c0894)
+
+### 2. Result
+![Screenshot (2)](https://github.com/gb3801/dog-breed-prediction-webapp-main/assets/98964593/97887358-c90a-4a93-9e24-7ab238ffe90c)
+
